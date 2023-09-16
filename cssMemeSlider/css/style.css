@@ -28,3 +28,77 @@ h1 {
     padding-top: 1%;
     padding-bottom: 2%;
 }
+.container {
+    padding: 2% 2% 10%;
+}
+
+.wrapper {
+    height: 28em;
+	margin: 0 auto;
+	width: 35em;
+    
+}
+
+.slider {
+	background-color: rgb(161 81 237 / 75%);
+    height: 100%;
+	overflow: hidden;
+	box-shadow: 0 0 2em rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: column;
+    border-radius: 5%;
+    margin-bottom: 1em;
+}
+.wrapper > input {
+	display: none;
+}
+
+.slides {
+	height: inherit;
+	width: inherit;
+    margin-bottom: -28em;
+}
+
+.wrapper label{
+	cursor: pointer;
+	display: inline-block;
+	height: 1em;
+    width: 1em;
+    border: 1px solid rgb(255, 230, 0);
+	border-radius: 50%;
+    background-color: rgba(160, 105, 212, 0.753);
+    transition: 0.5s;
+}
+
+.wrapper .control:hover, 
+#slide1:checked ~ .con > .controls label:nth-of-type(1),
+#slide2:checked ~ .con > .controls label:nth-of-type(2),
+#slide3:checked ~ .con > .controls label:nth-of-type(3),
+#slide4:checked ~ .con > .controls label:nth-of-type(4),
+#slide5:checked ~ .con > .controls label:nth-of-type(5) {
+	background: rgb(255, 230, 0);
+    transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+    cursor: pointer;
+}
+
+.slides{
+    height: 100%;
+	opacity: 0;
+	z-index: 0;
+    transform: translateX(35em);
+	transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+    display: flex;
+    align-self: center;
+}
+
+#slide1:checked ~ .slider > .slide1, 
+#slide2:checked ~ .slider > .slide2,
+#slide3:checked ~ .slider > .slide3,
+#slide4:checked ~ .slider > .slide4,
+#slide5:checked ~ .slider > .slide5 {
+	opacity: 1;
+	z-index: 1;
+	transform: scale(1);
+    display: flex;
+    align-items: center;
+}
