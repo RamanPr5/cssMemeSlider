@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap');
+
+* {
+	box-sizing: border-box;
+    line-height: 0%;
+}
+
+body {
+	background-color: rgba(160, 105, 212, 0.753);
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-weight: 500;
+}
+
+.header {
+    width: 70%;
+    margin: 0 auto;
+    background-color:  rgb(255, 230, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-right-radius: 5rem;
+    border-bottom-left-radius: 5em;
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 1%;
+    padding-bottom: 2%;
+}
+
+.container {
+    padding: 2% 2% 10%;
+}
+
+.wrapper {
+    height: 28em;
+	margin: 0 auto;
+	width: 35em;
+    
+}
+
+.slider {
+	background-color: rgb(161 81 237 / 75%);
+    height: 100%;
+	overflow: hidden;
+	box-shadow: 0 0 2em rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: column;
+    border-radius: 5%;
+    margin-bottom: 1em;
+}
+.wrapper > input {
+	display: none;
+}
+
+.slides {
+	height: inherit;
+	width: inherit;
+    margin-bottom: -28em;
+}
+
+.wrapper label{
+	cursor: pointer;
+	display: inline-block;
+	height: 1em;
+    width: 1em;
+    border: 1px solid rgb(255, 230, 0);
+	border-radius: 50%;
+    background-color: rgba(160, 105, 212, 0.753);
+    transition: 0.5s;
+}
+
+.wrapper .control:hover, 
+#slide1:checked ~ .con > .controls label:nth-of-type(1),
+#slide2:checked ~ .con > .controls label:nth-of-type(2),
+#slide3:checked ~ .con > .controls label:nth-of-type(3),
+#slide4:checked ~ .con > .controls label:nth-of-type(4),
+#slide5:checked ~ .con > .controls label:nth-of-type(5) {
+	background: rgb(255, 230, 0);
+    transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+    cursor: pointer;
+}
+
+.slides{
+    height: 100%;
+	opacity: 0;
+	z-index: 0;
+    transform: translateX(35em);
+	transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+    display: flex;
+    align-self: center;
+}
+
+#slide1:checked ~ .slider > .slide1, 
+#slide2:checked ~ .slider > .slide2,
+#slide3:checked ~ .slider > .slide3,
+#slide4:checked ~ .slider > .slide4,
+#slide5:checked ~ .slider > .slide5 {
+	opacity: 1;
+	z-index: 1;
+	transform: scale(1);
+    display: flex;
+    align-items: center;
+}
+
+.con {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 35em;
+    margin-bottom: 3%;
+}
+
+.textQ {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-left: 5em;
+}
+
+.text {
+    opacity: 0;
+	z-index: 0;
+	transform: scale(1.5);
+	transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+    display: flex;
+    height: inherit;
+    width: inherit;
+    height: 100%;
+    justify-content: flex-start;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+#slide1:checked ~ .con > .textQ > .text1 {
+    display: flex;
+    align-items: center;
+	opacity: 1;
+	z-index: 1;  
+}
+
+#slide2:checked ~ .con > .textQ > .text2 {
+    display: flex;
+    align-items: center;
+	opacity: 1;
+	z-index: 1;
+}
+
+#slide3:checked ~ .con > .textQ > .text3 {
+    display: flex;
+    align-items: center;
+	opacity: 1;
+	z-index: 1;
+}
+
+#slide4:checked ~ .con > .textQ > .text4 {
+    display: flex;
+    align-items: center;
+	opacity: 1;
+	z-index: 1;
+}
+#slide5:checked ~ .con > .textQ > .text5 {
+    display: flex;
+    align-items: center;
+	opacity: 1;
+	z-index: 1;
+} 
+
+@media screen and (max-width: 700px) {
+    img {
+        width: 100%;
+    }
+    
+    .wrapper {
+        height: 24em;
+        margin: 0 auto;
+        width: 30em; 
+    }
+    
+    .slider {
+        margin-bottom: 2em;
+    }
+    
+    .slides{
+        margin-bottom: -24em;
+    }
+
+    .con {
+        flex-direction: column-reverse;
+    }
+    
+    .textQ {
+        margin-top: 2em;
+        margin-bottom: 2em;
+        margin-left: -10em;
+    }
+    
+    .controls {
+        margin-left: -5em;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .wrapper {
+        height: 20em;
+        margin: 0 auto;
+        width: 26em; 
+    }
+        
+    .slides{
+        margin-bottom: -20em;
+    }
+}
