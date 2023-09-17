@@ -200,3 +200,15 @@ h1 {
         margin-left: -5em;
     }
 }
+
+@media screen and (max-width: 550px) {
+    .wrapper {
+        height: 20em;
+        margin: 0 auto;
+        width: 26em; 
+    }
+        
+    .slides{
+        margin-bottom: -20em;
+    }
+}
